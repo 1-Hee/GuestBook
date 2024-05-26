@@ -1,0 +1,239 @@
+
+/* for mobile size */
+@media (max-width: 480px) {
+    .form-login {
+        display: flex;
+        width: 260px;
+        height: 298px;
+        padding: 24px 32px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: var(--pure-white, #FFF);
+    }
+
+    .d-id-input,
+    .d-pwd-input {
+        display: flex;
+        width: 228px;
+        padding: 12px 16px;
+        align-items: center;
+        gap: 12px;
+        border-radius: 8px;
+        background: var(--white, #F0F0F2);
+    }
+
+    .lg-icon-lock,
+    .lg-icon-user {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        padding: 0 4px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .id-input,
+    .pwd-input {
+        color: var(--mono60, #696E73);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border: 0;
+        outline: none;
+        background: transparent;
+    }
+
+    .register-frame {
+        display: flex;
+        width: 256px;
+        padding: 12px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .register-guide {
+        color: var(--black, #0D0D0D);
+        font-family: Inter;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .mv-register {
+        display: flex;
+        width: 45px;
+        padding: 4px 0;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-shrink: 0;
+        color: var(--mono60, #696E73);
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        text-decoration: none;
+        /* 밑줄 제거 */
+        border-bottom: 1px solid #ccc;
+        /* 밑줄 추가 */
+        transition: border-color 0.3s ease;
+        /* 전환 효과 설정 */
+    }
+    /* 방문 후 */
+    .mv-register:visited {
+        border-color: var(--mono60, #696E73);
+        /* 방문 후 밑줄 색상 */
+    }
+
+    .btn-login {
+        display: flex;
+        width: 256px;
+        height: 42px;
+        padding: 8px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+/* for desktop size */
+@media (min-width: 481px) {
+    .form-login {
+        display: flex;
+        width: 398px;
+        height: 328px;
+        padding: 24px 32px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: var(--pure-white, #FFF);
+    }
+
+    .d-id-input,
+    .d-pwd-input {
+        display: flex;
+        width: 328px;
+        padding: 12px 16px;
+        align-items: center;
+        gap: 12px;
+        border-radius: 8px;
+        background: var(--white, #F0F0F2);
+    }
+
+    .lg-icon-lock,
+    .lg-icon-user {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        padding: 0 4px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .id-input,
+    .pwd-input {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border: 0;
+        outline: none;
+        background: transparent;
+    }
+
+    .register-frame {
+        display: flex;
+        width: 328px;
+        padding: 12px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .register-guide {
+        color: var(--black, #0D0D0D);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .mv-register {
+        font-size: 10px;
+        color: var(--mono60, #696E73);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        /* 밑줄 제거 */
+        border-bottom: 1px solid #ccc;
+        /* 밑줄 추가 */
+        transition: border-color 0.3s ease;
+        /* 전환 효과 설정 */
+    }
+    /* 방문 후 */
+    .mv-register:visited {
+        border-color: var(--mono60, #696E73);
+        /* 방문 후 밑줄 색상 */
+    }
+
+    .btn-login {
+        display: flex;
+        width: 360px;
+        height: 48px;
+        padding: 8px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.form-login .btn-login {
+    cursor: pointer;
+    transition: .5s;
+    color: var(--white, #F0F0F2);
+    background: var(--p-navy70, #33388C);
+}
+
+.form-login .btn-login:hover {
+    background: var(--p-navy80, #004D6F);
+
+}
+
+.form-login > .close-layer {
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 32px;
+}
+
+.form-login > .close-layer > img {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;    
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.onehee.guestbook.model.mapper.UserMapper">
+
+	<resultMap type="userDTO" id="userInfo">
+		<result column="user_name" property="userName"/>
+		<result column="user_password" property="userPassword"/>		
+	</resultMap>
+	
+	<insert id="addUser" parameterType="userDTO">
+		INSERT INTO user_info(user_name, user_password)
+		VALUES (#{userName}, #{userPassword});
+	</insert>
+	
+	<select id="selectUserList" parameterType="map" resultMap="userInfo">
+		SELECT user_name, user_password
+		FROM user_info
+		WHERE user_status = 1
+		LIMIT #{pgNo}, #{size};
+	</select>
+	
+	<select id="getUserInfo" parameterType="String" resultMap="userInfo">
+		SELECT user_name, user_password
+		FROM user_info
+		WHERE WHERE user_status = 1 AND user_name = #{userName};
+	</select>
+	
+	<select id="loginUser" parameterType="userDTO" resultMap="userInfo">
+		SELECT user_name, user_password
+		FROM user_info
+		WHERE user_status = 1 AND 
+		user_name = #{userName} AND user_password = #{userPassword};
+	</select>
+	
+	<select id="checkUserName" parameterType="String" resultType="boolean">
+		SELECT ( COUNT(idx) = 0 ) as cnt
+		FROM user_info
+		WHERE user_name = #{userName};
+	</select>
+	
+	<update id="updateUserInfo" parameterType="userDTO">
+		UPDATE user_info
+		SET user_name = #{userName}, user_password = #{userPassword}
+		WHERE user_name = #{userName};
+	</update>
+	
+	<update id="updateUserPwd" parameterType="map">
+		UPDATE user_info
+		SET user_password = #{newPwd}
+		WHERE user_name = #{userName} AND user_password = #{userPassword};
+	</update>
+	
+	<update id="deleteUserInfo" parameterType="String">
+		UPDATE user_info
+		SET user_status = 0
+		WHERE user_name = #{userName};
+	</update>
+
+</mapper>
+	
